@@ -215,6 +215,26 @@ limitations under the License.
 #define CAMERA_PIN_HREF 23
 #define CAMERA_PIN_PCLK 22
 
+#elif CONFIG_CAMERA_MODULE_LILYGO_CAMERA_PLUS
+#define CAMERA_MODULE_NAME "LILYGO CAMERA PLUS"
+#define CAMERA_PIN_PWDN -1
+#define CAMERA_PIN_RESET -1
+#define CAMERA_PIN_XCLK 4
+#define CAMERA_PIN_SIOD 18
+#define CAMERA_PIN_SIOC 23
+
+#define CAMERA_PIN_D7 36
+#define CAMERA_PIN_D6 37
+#define CAMERA_PIN_D5 38
+#define CAMERA_PIN_D4 39
+#define CAMERA_PIN_D3 35
+#define CAMERA_PIN_D2 26
+#define CAMERA_PIN_D1 13
+#define CAMERA_PIN_D0 34
+#define CAMERA_PIN_VSYNC 5
+#define CAMERA_PIN_HREF 27
+#define CAMERA_PIN_PCLK 25
+
 #elif CONFIG_CAMERA_MODULE_CUSTOM
 #define CAMERA_MODULE_NAME "CUSTOM"
 #define CAMERA_PIN_PWDN CONFIG_CAMERA_PIN_PWDN
@@ -236,7 +256,7 @@ limitations under the License.
 #define CAMERA_PIN_PCLK CONFIG_CAMERA_PIN_PCLK
 #endif
 
-#define XCLK_FREQ_HZ 20000000
+#define XCLK_FREQ_HZ 15000000
 
 #ifdef __cplusplus
 extern "C" {

@@ -83,13 +83,13 @@ esp_err_t register_lcd(const QueueHandle_t frame_i, const QueueHandle_t frame_o,
         .sclk_io_num = BOARD_LCD_SCK,
         .max_transfer_sz = 2 * 240 * 240 + 10,
     };
-    spi_bus_handle_t spi_bus = spi_bus_create(SPI2_HOST, &bus_conf);
+    spi_bus_handle_t spi_bus = spi_bus_create(LCD_HOST, &bus_conf);
 
     scr_interface_spi_config_t spi_lcd_cfg = {
         .spi_bus = spi_bus,
         .pin_num_cs = BOARD_LCD_CS,
         .pin_num_dc = BOARD_LCD_DC,
-        .clk_freq = 26 * 1000000,
+        .clk_freq = BOARD_LCD_PIXEL_CLOCK_HZ,
         .swap_data = 0,
     };
 
@@ -106,11 +106,11 @@ esp_err_t register_lcd(const QueueHandle_t frame_i, const QueueHandle_t frame_o,
         .pin_num_rst = BOARD_LCD_RST,
         .pin_num_bckl = BOARD_LCD_BL,
         .rst_active_level = 0,
-        .bckl_active_level = 1,
+        .bckl_active_level = BOARD_LCD_BK_LIGHT_ON_LEVEL,
         .offset_hor = 0,
         .offset_ver = 0,
-        .width = 240,
-        .height = 240,
+        .width = BOARD_LCD_H_RES,
+        .height = BOARD_LCD_V_RES,
         .rotate = 0,
     };
     ret = g_lcd.init(&lcd_cfg);

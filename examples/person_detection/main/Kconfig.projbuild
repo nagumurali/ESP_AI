@@ -23,6 +23,8 @@ choice CAMERA_MODULE
         bool "M5Stack Camera F (Wide)"
     config CAMERA_MODULE_AI_THINKER
         bool "ESP32-CAM by AI-Thinker"
+    config CAMERA_MODULE_LILYGO_CAMERA_PLUS
+        bool "Lilygo ESP32 Camera Plus Board"
     config CAMERA_MODULE_CUSTOM
         bool "Custom Camera Pinout"
 endchoice
@@ -157,6 +159,15 @@ config CAMERA_PIN_Y9
 endmenu
 
 menu "Display support"
-
+    choice LCD_PINOUT
+        bool "Select LCD Pinout"
+        default ESP32_LILYGO_CAMERA_PLUS
+        help
+            Select Camera Pinout.
+        config ESP32_LILYGO_CAMERA_PLUS
+            bool "Lilygo ESP32 Camera Plus Board"
+        config ESP32_CUSTOM_BOARD
+            bool "ESP32 Custom Board with LCD"
+    endchoice
 endmenu
 endmenu
