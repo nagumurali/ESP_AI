@@ -87,6 +87,10 @@ As per the upstream repository policy, the tflite-lib is copied into the compone
 - For ESP-IDF related issues please use [esp-idf](https://github.com/espressif/esp-idf) repo.
 - For TensorFlow related information use [tflite-micro](https://github.com/tensorflow/tflite-micro) repo.
 
+## Additional Platform Support
+- Added support for the [Lilygo Camera Plus](http://www.lilygo.cn/prod_view.aspx?TypeId=50067&Id=1272&FId=t3:50067:3) board.
+- Tested all the application on the board.
+
 ## License
 
 These examples are covered under Apache2 License.
